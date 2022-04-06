@@ -1,0 +1,5 @@
+SELECT  user.name as user_name,  activity.name as activity_name,count(occurrence) as amount , MIN(occurrence) as First_Occurrence, MAX(occurrence) as Last_Occurrence 
+from user_activity 
+join user on user_activity.user_id =user.id 
+join activity on user_activity.activity_id =activity.id 
+group by user.name 
